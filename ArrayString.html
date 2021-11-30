@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArrayString</title>
+  </head>
+  <body>
+    <script>
+      // EX1
+      var color = [
+        'Blue ',
+        'Green',
+        'Red',
+        'Orange',
+        'Violet',
+        'Indigo',
+        'Yellow '
+      ];
+
+      function Ordinal(n) {
+        var o = ['th', 'st', 'nd', 'rd'],
+          x = n % 100;
+        return x + (o[(x - 20) % 10] || o[x] || o[0]);
+      }
+
+      for (n = 0; n < color.length; n++) {
+        var ordinal = n + 1;
+
+        var output = Ordinal(ordinal) + ' choice is ' + color[n] + '.';
+
+        console.log(output);
+      }
+
+      // EX2
+      let ArrayString = [NaN, 0, 15, false, -22, '', undefined, 47, null];
+      console.log(ArrayString.filter(item => Boolean(item) === true));
+    </script>
+  </body>
+</html>
